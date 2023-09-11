@@ -11,17 +11,14 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                inter: "'Inter', sans-serif",
+                inter: "'Roboto', sans-serif",
             },
             colors: {
-                primary: "#31305F",
-                "primary-dark": "#1C1C45",
-                "primary-light": "#393868",
-                text: "#5B598E",
-                border: "#424171",
-            },
-            backgroundImage: {
-                login: "url(../../../public/images/background.png)",
+                primary: "#161621",
+                "primary-light": "#2B2B38",
+                secondary: "#F74346",
+                gray: "#4A4B56",
+                white: "#F1F1F1",
             },
             boxShadow: {
                 input: "inset 0 7px 4px #16153A",
