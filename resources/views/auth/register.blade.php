@@ -3,49 +3,57 @@
         @csrf
 
         <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        <div class="relative p-5 border rounded-lg border-gray-l">
+            <h2 class="absolute top-0 px-4 font-semibold text-gray-l left-6 -translate-y-2/4 bg-gray-d">Dados pessoais
+            </h2>
+            <div class="mt-2">
+                <x-input type="text" id="primeiro_nome" label="Primeiro Nome" />
+            </div>
+
+            <div class="mt-4">
+                <x-input type="text" id="sobrenome" label="Sobrenome" />
+            </div>
+
+            <div class="mt-4">
+                <x-input type="text" id="cpf" label="CPF" />
+            </div>
+
+            <div class="mt-4">
+                <x-input type="text" id="telefone" label="Telefone" />
+            </div>
+
+            <div class="mt-4">
+                <x-input type="text" id="data_nascimento" label="Data de Nascimento" />
+            </div>
         </div>
 
         <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+        <div class="relative p-5 mt-6 border rounded-lg border-gray-l">
+            <h2 class="absolute top-0 px-4 font-semibold text-gray-l left-6 -translate-y-2/4 bg-gray-d">Credenciais
+            </h2>
+            <div class="mt-2">
+                <x-input type="text" id="email" label="Email" />
+            </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <!-- Password -->
+            <div class="mt-4">
+                <x-input type="text" id="password" label="Senha" />
+            </div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+            <!-- Confirm Password -->
+            <div class="mt-4">
+                <x-input type="text" id="confirm-password" label="Confirmar Senha" />
+            </div>
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
+            {{-- <a class="text-sm text-white underline rounded-md dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+                href="{{ route('login') }}">
                 {{ __('Already registered?') }}
-            </a>
+            </a> --}}
 
             <x-primary-button class="ml-4">
-                {{ __('Register') }}
+                Registrar
             </x-primary-button>
         </div>
     </form>
