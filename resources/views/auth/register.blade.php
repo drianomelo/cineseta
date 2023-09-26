@@ -1,8 +1,14 @@
 <x-guest-layout>
+    <div class="flex items-center justify-center w-3/4 mx-auto mb-8 bg-[#111318] p-1.5 rounded-lg gap-4">
+        <a href="{{ route('login') }}" class="flex-1  text-sm font-bold text-center uppercase text-gray py-1.5">login</a>
+        <a href="{{ route('register') }}"
+            class="flex-1 text-center text-sm uppercase font-bold bg-30% rounded-md py-1.5 text-30%-d">registrar</a>
+    </div>
+
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
-        <!-- Name -->
+        <!-- Dados Pessoais -->
         <div class="relative p-5 border rounded-lg border-gray-l">
             <h2 class="absolute top-0 px-4 font-semibold text-gray-l left-6 -translate-y-2/4 bg-gray-d">Dados pessoais
             </h2>
@@ -27,7 +33,7 @@
             </div>
         </div>
 
-        <!-- Email Address -->
+        <!-- Credenciais -->
         <div class="relative p-5 mt-6 border rounded-lg border-gray-l">
             <h2 class="absolute top-0 px-4 font-semibold text-gray-l left-6 -translate-y-2/4 bg-gray-d">Credenciais
             </h2>
@@ -35,23 +41,16 @@
                 <x-input type="text" id="email" label="Email" />
             </div>
 
-            <!-- Password -->
             <div class="mt-4">
                 <x-input type="text" id="password" label="Senha" />
             </div>
 
-            <!-- Confirm Password -->
             <div class="mt-4">
                 <x-input type="text" id="confirm-password" label="Confirmar Senha" />
             </div>
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            {{-- <a class="text-sm text-white underline rounded-md dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a> --}}
-
             <x-primary-button class="ml-4">
                 Registrar
             </x-primary-button>
