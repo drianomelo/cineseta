@@ -18,6 +18,14 @@ class Filme extends Model
      */
     protected $guarded = [];
 
+    protected $fillable = [
+        'capa',
+        'titulo',
+        'sinopse',
+        'data_lancamento',
+        'faixa_etaria',
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -34,8 +42,7 @@ class Filme extends Model
      * @var array
      */
     protected $appends = [
-        'titulo',
-        'sinopse',
+
     ];
 
 }

@@ -27,7 +27,7 @@ class FilmeController extends Controller
      */
     public function create()
     {
-        //
+        return view('filme_create');
     }
 
     /**
@@ -35,7 +35,20 @@ class FilmeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $created = $this->filme->create([
+            'capa' => $request->input('capa'),
+            'titulo' => $request->input('titulo'),
+            'sinopse' => $request->input('sinopse'),
+            'data_lancamento' => $request->input('data_lancamento'),
+            'faixa_etaria' => $request->input('faixa_etaria'),
+        ]);
+
+        if ($created) {
+            return redirect()->back()->with('message', 'Adicionado com sucesso');
+        }
+
+        return redirect()->back()->with('message', 'Error ao adicionar');
+
     }
 
     /**
@@ -49,9 +62,9 @@ class FilmeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Filme $filme)
     {
-        //
+        return view('filme_edit', ['filme' => $filme]);
     }
 
     /**
@@ -59,14 +72,24 @@ class FilmeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $updated = $this->filme->where('id', $id)->update($request->except(['_token', '_method']));
+
+        if ($updated) {
+            return redirect()->back()->with('message', 'Editado com sucesso');
+        }
+
+        return redirect()->back()->with('message', 'Error ao editar');
+
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $this->filme->where('id', $id)->delete();
+
+        return redirect()->route('filmes.index');
     }
 }

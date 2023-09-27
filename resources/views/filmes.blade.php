@@ -2,6 +2,7 @@
 
 @section('content')
     <h2>FILMES</h2>
+    <a href="{{ route('filmes.create') }}">Adicionar Filme</a>
     <ul style="display: flex">
         @foreach ($filmes as $filme)
             <li>
@@ -10,6 +11,12 @@
                 <p>{{ $filme->sinopse }}</p>
                 <span>{{ $filme->data_lancamento }}</span>
                 <span>{{ $filme->faixa_etaria }}</span>
+                <a href="{{ route('filmes.edit', ['filme' => $filme->id]) }}">Editar</a>
+                <form action="{{ route('filmes.destroy', ['filme' => $filme->id]) }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit">Excluir</button>
+                </form>
             </li>
         @endforeach
     </ul>
