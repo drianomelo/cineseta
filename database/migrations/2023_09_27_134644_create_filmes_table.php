@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('filmes', function (Blueprint $table) {
             $table->id();
+            $table->longText('capa');
             $table->string('titulo');
             $table->longText('sinopse');
             $table->date('data_lancamento');
