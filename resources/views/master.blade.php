@@ -11,8 +11,8 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="w-full h-screen bg-gray-900">
-    <main>
+<body class="w-full h-screen overflow-hidden bg-gray-900">
+    <main class="">
         @yield('content')
     </main>
 
