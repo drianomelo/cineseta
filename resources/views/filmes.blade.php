@@ -5,7 +5,7 @@
         <a class="p-2 font-semibold bg-green-600 rounded-lg text-zinc-50" href="{{ route('filmes.create') }}">Adicionar
             Filme</a>
     </div>
-    <div class="flex flex-wrap gap-8 p-10">
+    <div class="flex flex-wrap justify-center gap-20 p-10">
         @foreach ($filmes as $filme)
             <article class="w-[290px] relative group ">
                 <img class="w-full h-[380px] rounded-xl" src="{{ $filme->capa }}" alt="Capa do filme {{ $filme->titulo }}">
