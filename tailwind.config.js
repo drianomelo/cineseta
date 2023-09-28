@@ -13,13 +13,8 @@ export default {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
-            colors: {
-                white: "#F9F9F9",
-                gray: "#21242D",
-                "gray-l": "#313541",
-                "gray-d": "#16181E",
-                "30%": "#00B9AE",
-                "30%-d": "#07837b",
+            boxShadow: {
+                card: "0px 0px 20px #ffbb00",
             },
         },
     },
