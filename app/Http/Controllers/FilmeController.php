@@ -54,9 +54,9 @@ class FilmeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Filme $filme)
     {
-        //
+        return view('filme_show', ['filme' => $filme]);
     }
 
     /**

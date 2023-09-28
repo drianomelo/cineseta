@@ -13,9 +13,6 @@ export default {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
-            boxShadow: {
-                card: "0px 0px 20px #ffbb00",
-            },
         },
     },
 };
