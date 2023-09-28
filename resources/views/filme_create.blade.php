@@ -26,7 +26,7 @@
             <input
                 class="w-full p-2 font-semibold text-gray-700 bg-transparent border-b-2 border-gray-900 outline-none placeholder:text-gray-800 placeholder:font-semibold"
                 type="text" name="faixa_etaria" placeholder="Insira a faixa etária do filme">
-            <button class="w-2/4 p-1 font-semibold bg-green-900 rounded-lg text-zinc-200" type="submit">Adicionar</button>
+            <button class="w-2/4 p-1 font-semibold transition-all duration-500 bg-green-900 rounded-lg text-zinc-200 hover:bg-green-600 hover:text-zinc-50" type="submit">Adicionar</button>
         </form>
     </div>
 @endsection

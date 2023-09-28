@@ -31,7 +31,9 @@
                 class="w-full p-2 font-semibold text-gray-700 bg-transparent border-b-2 border-gray-900 outline-none placeholder:text-gray-800 placeholder:font-semibold"
                 type="date" name="data_lancamento" value="{{ $filme->data_lancamento }}">
             <div class="flex items-center justify-center gap-4">
-                <button class="px-2 py-1 font-bold bg-green-800 rounded-lg text-zinc-200" type="submit">Confirmar</button>
+                <button
+                    class="px-2 py-1 font-bold transition-all duration-500 bg-green-800 rounded-lg text-zinc-200 hover:bg-green-600 hover:text-zinc-50"
+                    type="submit">Confirmar</button>
             </div>
         </form>
     </div>
