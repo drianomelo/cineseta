@@ -45,4 +45,45 @@ class Filme extends Model
 
     ];
 
+    /**
+     * Get the Filme's Avaliacao.
+     *
+     * @return string
+     */
+    public function getAvaliacaoAttribute()
+    {
+        return $this->avaliacaoRelationship;
+    }
+
+    /**
+     * Get the Filme's Sessao.
+     *
+     * @return string
+     */
+    public function getSessaoAttribute()
+    {
+        return $this->sessaoRelationship;
+    }
+
+
+    /**
+     * Get the Avaliacao that owns the Filme.
+     *
+     * @return Avaliacao
+     */
+    public function avaliacaoRelationship()
+    {
+        return $this->hasMany(Avaliacao::class, 'filme_id');
+    }
+
+    /**
+     * Get the Sessao that owns the Filme.
+     *
+     * @return Sessao
+     */
+    public function sessaoRelationship()
+    {
+        return $this->hasMany(Sessao::class, 'filme_id');
+    }
+
 }
