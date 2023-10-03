@@ -11,13 +11,13 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('sessaos', function (Blueprint $table) {
+            $table->id('sessao_id');
             $table->dateTime('horario');
             $table->date('dia');
-            $table->primary(['horario', 'dia']);
-            $table->integer('sala_numero');
-            $table->bigInteger('filme_id');
-            $table->foreign('sala_numero')->references('numero')->on('salas');
-            $table->foreign('filme_id')->references('id')->on('filmes');
+            $table->integer('sala_id');
+            $table->integer('filme_id');
+            $table->foreign('sala_id')->references('sala_id')->on('salas');
+            $table->foreign('filme_id')->references('filme_id')->on('filmes');
             $table->timestamps();
         });
     }

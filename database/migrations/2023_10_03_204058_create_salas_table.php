@@ -11,9 +11,10 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('salas', function (Blueprint $table) {
-            $table->integer('numero')->primary();
+            $table->id('sala_id');
+            $table->integer('numero');
             $table->integer('capacidade');
-            $table->string('cinema_id');
+            $table->integer('cinema_id');
             $table->foreign('cinema_id')->references('id')->on('cinemas');
             $table->timestamps();
         });
