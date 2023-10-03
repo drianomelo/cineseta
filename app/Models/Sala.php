@@ -16,6 +16,17 @@ class Sala extends Model
      */
     protected $table = 'salas';
 
+    protected $fillable = [
+        'numero',
+        'capacidade',
+        'cinema_id',
+    ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
     /**
      * Get the Sala's Cinema.
      *

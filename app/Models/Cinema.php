@@ -16,6 +16,17 @@ class Cinema extends Model
      */
     protected $table = 'cinemas';
 
+    protected $fillable = [
+        'nome',
+        'endereco',
+    ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
+
     /**
      * Get the Cinema's Gerente.
      *

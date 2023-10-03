@@ -16,6 +16,18 @@ class Sessao extends Model
      */
     protected $table = 'sessaos';
 
+    protected $fillable = [
+        'horario',
+        'dia',
+        'sala_numero',
+        'filme_id',
+    ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
     /**
      * Get the Sessao's Filme.
      *
