@@ -9,7 +9,7 @@
     <div class="flex flex-wrap justify-center gap-20 p-10">
         @foreach ($sessoes as $sessao)
             <div class="relative group">
-                <div class="p-2 font-semibold bg-green-600 rounded-lg text-zinc-50" >Sessão {{$sessao}}
+                <div class="p-2 font-semibold bg-green-600 rounded-lg text-zinc-50" >{{$sessao->filme->titulo}}, {{$sessao->dia}}, {{$sessao->horario}}, Sala {{{$sessao->sala->numero}}}
                 {{-- <article class="w-[290px] relative group overflow-hidden rounded-xl">
 
 
