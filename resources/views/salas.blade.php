@@ -9,7 +9,7 @@
     <div class="flex flex-wrap justify-center gap-20 p-10">
         @foreach ($salas as $sala)
             <div class="relative group">
-                <a class="p-2 font-semibold bg-green-600 rounded-lg text-zinc-50" href="{{ route('salas.show', [$sala->id]) }}">Sala {{$sala->numero}}</a>
+                <div class="p-2 font-semibold bg-green-600 rounded-lg text-zinc-50" >Sala {{$sala->numero}}
                 {{-- <article class="w-[290px] relative group overflow-hidden rounded-xl">
 
 
@@ -18,12 +18,13 @@
 
                         {{ $sala->capacidade }}</span>
                     <div
-                        class="absolute flex w-full transition-all duration-500 opacity-0 bottom-12 justify-evenly group-hover:bottom-6 group-hover:opacity-100">
-                        {{-- <a class="px-2 py-1 font-bold bg-blue-500 rounded-lg text-zinc-50"
-                            href="{{ route('salas.edit', ['sala' => $sala->id]) }}">Editar</a> --}}
-                        {{-- <a class="px-2 py-1 font-bold bg-indigo-700 rounded-lg text-zinc-50"
+                        class="absolute flex w-full transition-all duration-500 opacity-0 bottom-12 justify-evenly group-hover:bottom-6 group-hover:opacity-100">--}}
+                        <a class="px-2 py-1 font-bold bg-blue-500 rounded-lg text-zinc-50"
+                            href="{{ route('salas.edit', ['sala' => $sala->id]) }}">Editar</a>
+                        <a class="px-2 py-1 font-bold bg-indigo-700 rounded-lg text-zinc-50"
                             href="{{ route('salas.show', ['sala' => $sala->id]) }}">Visualizar</a>
                     </div>
+                    {{--</div>
                 </article>
                 <div
                     class="absolute flex flex-col items-center w-full p-2 top-[250px] -z-10 transition-all duration-500 group-hover:top-[380px]">
