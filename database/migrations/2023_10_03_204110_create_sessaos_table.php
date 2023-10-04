@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('sessaos', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('horario');
+            $table->string('horario');
             $table->date('dia');
             $table->integer('sala_id');
             $table->integer('filme_id');
