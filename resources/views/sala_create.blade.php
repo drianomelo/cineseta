@@ -1,6 +1,9 @@
 @extends('master')
 
 @section('content')
+<div class="flex items-center justify-between px-10 pt-8">
+    <a class="p-2 font-semibold bg-green-600 rounded-lg text-zinc-50" href="{{ route('salas.index') }}">Voltar para Salas</a>
+</div>
     <div class="flex flex-col items-center justify-center w-full h-screen">
         <div class="bg-green-400">
             @if (session()->has('message'))
