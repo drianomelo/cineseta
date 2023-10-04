@@ -20,12 +20,12 @@ class SalaSeeder extends Seeder
             'cinema_id' => 3,
         ]);
         DB::table('salas')->insert([
-            'numero' => 1,
+            'numero' => 2,
             'capacidade' => 120,
             'cinema_id' => 2,
         ]);
         DB::table('salas')->insert([
-            'numero' => 2,
+            'numero' => 3,
             'capacidade' => 90,
             'cinema_id' => 1,
         ]);
