@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="flex items-center justify-between px-10 pt-8">
+        <a class="p-2 font-semibold bg-green-600 rounded-lg text-zinc-50" href="{{ route('home') }}">Voltar</a>
         <a class="p-2 font-semibold bg-green-600 rounded-lg text-zinc-50" href="{{ route('salas.create') }}">Adicionar
             Sala</a>
         {{-- <span class="text-xs font-bold text-red-600 w-36">Para deletar um filme clique em "visualizar"</span> --}}
