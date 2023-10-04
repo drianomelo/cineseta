@@ -14,12 +14,12 @@ class Sessao extends Model
      *
      * @var string
      */
-    protected $table = 'sessaos';
+    protected $table = 'sessoes';
 
     protected $fillable = [
         'horario',
         'dia',
-        'sala_numero',
+        'sala_id',
         'filme_id',
     ];
 

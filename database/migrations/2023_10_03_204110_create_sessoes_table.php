@@ -10,14 +10,14 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('sessaos', function (Blueprint $table) {
+        Schema::create('sessoes', function (Blueprint $table) {
             $table->id();
             $table->string('horario');
             $table->date('dia');
             $table->integer('sala_id');
             $table->integer('filme_id');
-            $table->foreign('sala_id')->references('sala_id')->on('salas');
-            $table->foreign('filme_id')->references('filme_id')->on('filmes');
+            $table->foreign('sala_id')->references('id')->on('salas');
+            $table->foreign('filme_id')->references('id')->on('filmes');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('sessaos');
+        Schema::dropIfExists('sessoes');
     }
 };

@@ -19,21 +19,21 @@ class SessaoSeeder extends Seeder
         $dataHorarioSessao2 = Carbon::create(2023, 10, 15, 14, 30, 0);
         $dataHorarioSessao3 = Carbon::create(2023, 10, 15, 14, 30, 0);
 
-        DB::table('sessaos')->insert([
+        DB::table('sessoes')->insert([
             'horario' => "14:30",
             'dia' => $dataHorarioSessao1,
             'sala_id' => 1,
             'filme_id' => 3,
         ]);
 
-        DB::table('sessaos')->insert([
+        DB::table('sessoes')->insert([
             'horario' => "15:20",
             'dia' => $dataHorarioSessao2,
             'sala_id' => 2,
             'filme_id' => 1,
         ]);
 
-        DB::table('sessaos')->insert([
+        DB::table('sessoes')->insert([
             'horario' => "16:50",
             'dia' => $dataHorarioSessao3,
             'sala_id' => 3,

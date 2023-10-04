@@ -50,11 +50,12 @@ class SessaoController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->input('filme_id'));
         $created = $this->sessao->create([
             'horario' => $request->input('horario'),
             'dia' => $request->input('dia'),
-            'filme_id' => $request->input('filme_id'), //select?
             'sala_id' => $request->input('sala_id'), //select?
+            'filme_id' => $request->input('filme_id'), //select?
         ]);
 
         if ($created) {
@@ -71,8 +72,8 @@ class SessaoController extends Controller
     public function show(Sessao $sessao)
     {
         // $sessao = $this->sessao->all();
-        $filmes = this->filme->all();
-        $salas = this->sala->all();
+        $filmes = $this->filme->all();
+        $salas = $this->sala->all();
         return view('sessao_show', ['sessao' => $sessao, 'filmes' => $filmes, 'salas' => $salas]);
     }
 
