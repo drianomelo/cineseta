@@ -31,6 +31,9 @@ class SessaoController extends Controller
      */
     public function create()//create(id, tipo: filme ou sala)
     {
+        $filmes = $this->filme->all();
+        $salas = $this->sala->all();
+
         /*
         if ($tipo = filme)
             $salas = $this->sala->all();
@@ -39,7 +42,7 @@ class SessaoController extends Controller
             $filmes = $this->filme->all();
             return view('sessao_create', ['salas' => $salas]);
         */
-        return view('sessao_create');
+        return view('sessao_create', ['filmes' => $filmes, 'salas' => $salas]);
     }
 
     /**
