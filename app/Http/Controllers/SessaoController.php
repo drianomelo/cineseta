@@ -82,8 +82,12 @@ class SessaoController extends Controller
      */
     public function edit(Sessao $sessao)
     {
+
+        $filmes = $this->filme->all();
+        $salas = $this->sala->all();
+
         // $sessaos = $this->sessao->all();
-        return view('sala_edit', ['sessao' => $sessao, 'filmes' => $filmes, 'salas' => $salas]);
+        return view('sessao_edit', ['sessao' => $sessao, 'filmes' => $filmes, 'salas' => $salas]);
     }
 
     /**
