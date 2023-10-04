@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FilmeController;
 use App\Http\Controllers\SalaController;
+use App\Http\Controllers\SessaoController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,4 +26,14 @@ Route::group(['prefix' => 'salas'], function () {
     Route::get('{sala}/edit', [SalaController::class, 'edit'])->name('salas.edit');
     Route::put('{sala}', [SalaController::class, 'update'])->name('salas.update');
     Route::delete('{sala}', [SalaController::class, 'destroy'])->name('salas.destroy');
+});
+
+Route::group(['prefix' => 'sessoes'], function () {
+    Route::get('/', [SessaoController::class, 'index'])->name('sessoes.index');
+    Route::get('create', [SessaoController::class, 'create'])->name('sessoes.create');
+    Route::post('/', [SessaoController::class, 'store'])->name('sessoes.store');
+    Route::get('{sessao}', [SessaoController::class, 'show'])->name('sessoes.show');
+    Route::get('{sessao}/edit', [SessaoController::class, 'edit'])->name('sessoes.edit');
+    Route::put('{sessao}', [SessaoController::class, 'update'])->name('sessoes.update');
+    Route::delete('{sessao}', [SessaoController::class, 'destroy'])->name('sessoes.destroy');
 });
