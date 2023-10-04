@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('sessaos', function (Blueprint $table) {
-            $table->id('sessao_id');
+            $table->id();
             $table->dateTime('horario');
             $table->date('dia');
             $table->integer('sala_id');
