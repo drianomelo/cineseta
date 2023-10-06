@@ -45,4 +45,7 @@ Route::group(['prefix' => 'consultas'], function () {
     Route::get('/', [ConsultasController::class, 'index'])->name('consultas.index');
     Route::get('/basic', [ConsultasController::class, 'basic'])->name('consultas.basic');
     Route::get('/like', [ConsultasController::class, 'like'])->name('consultas.like');
+    // Route::get('/union', [ConsultasController::class, 'union'])->name('consultas.union');
+    Route::get('/join', [ConsultasController::class, 'join'])->name('consultas.join');
+    Route::get('/multiple-join', [ConsultasController::class, 'multipleJoin'])->name('consultas.multiple-join');
 });

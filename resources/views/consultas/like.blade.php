@@ -25,7 +25,7 @@
                 <div class="flex items-center justify-center gap-4">
                     @foreach ($filmes as $filme)
                         <a href="{{ route('filmes.show', ['filme' => $filme->id]) }}">
-                            <img class="w-[200px] rounded-xl" src="{{ $filme->capa }}"
+                            <img class="w-[230px] h-[300px] rounded-xl" src="{{ $filme->capa }}"
                                 alt="Capa do filme {{ $search }}">
                         </a>
                     @endforeach

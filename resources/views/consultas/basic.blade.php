@@ -11,7 +11,7 @@
                 method="GET" name="basic" id="basic">
                 <input
                     class="p-2 mb-3 font-semibold text-gray-700 bg-transparent border-b-2 border-gray-800 outline-none w-[400px] placeholder:text-gray-800 placeholder:font-semibold"
-                    placeholder="Pesquise pelo título do filme" type="text" name="search" id="search" required>
+                    placeholder="Pesquise pela faixa etária do filme" type="text" name="search" id="search" required>
                 <button
                     class="w-2/4 p-1 font-semibold transition-all duration-500 bg-green-900 rounded-lg cursor-pointer text-zinc-200 hover:bg-green-600 hover:text-zinc-50"
                     type="button" onclick="submitForm('basic')">CONSULTAR</button>
