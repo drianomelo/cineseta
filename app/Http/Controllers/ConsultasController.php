@@ -13,7 +13,7 @@ class ConsultasController extends Controller
         $search = request('search');
         $filmes = Filme::all();
 
-        return view('consultas', ['filmes' => $filmes, 'search' => $search]);
+        return view('consultas.index', ['filmes' => $filmes, 'search' => $search]);
     }
 
     public function basic()
@@ -27,7 +27,7 @@ class ConsultasController extends Controller
             ->where('titulo', '=', $search)
             ->get();
 
-        return view('consultas', ['filmes' => $filmes, 'search' => $search]);
+        return view('consultas.basic', ['filmes' => $filmes, 'search' => $search]);
     }
     public function like()
     {
@@ -40,6 +40,6 @@ class ConsultasController extends Controller
             ->where('titulo', 'like', '%' . $search . '%')
             ->get();
 
-        return view('consultas', ['filmes' => $filmes, 'search' => $search]);
+        return view('consultas.like', ['filmes' => $filmes, 'search' => $search]);
     }
 }
