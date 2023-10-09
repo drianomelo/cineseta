@@ -98,4 +98,122 @@ class ConsultasController extends Controller
         return view('consultas.multiple-join', ['sessoes' => $sessoes, 'search' => $search]);
 
     }
+
+    public function agregacao()
+    {
+        // Consulta usando função de agregação
+
+        $search = request('search');
+
+        $count = '';
+
+        switch ($search) {
+            case 'filmes':
+                $count = DB::table('filmes')->count();
+                break;
+            case 'salas':
+                $count = DB::table('salas')->count();
+                break;
+            case 'sessoes':
+                $count = DB::table('sessoes')->count();
+                break;
+            case 'cinemas':
+                $count = DB::table('cinemas')->count();
+                break;
+        }
+
+        return view('consultas.agregacao', ['count' => $count, 'search' => $search]);
+
+    }
+
+    public function groupBy()
+    {
+        // Consulta usando GROUP BY
+
+        $search = request('search');
+
+        $cinemas = DB::table('sessoes')
+            ->join('salas', 'sessoes.sala_id', '=', 'salas.id')
+            ->join('cinemas', 'salas.cinema_id', '=', 'cinemas.id')
+            ->select('cinemas.nome', DB::raw('count(sessoes.id) as total_sessoes'))
+            ->groupBy('cinemas.nome')
+            ->get();
+
+
+        return view('consultas.groupBy', ['cinemas' => $cinemas, 'search' => $search]);
+
+    }
+
+    public function groupByHaving()
+    {
+        // Consulta usando GROUP BY e HAVING
+
+        $search = request('search');
+
+        $cinemas = DB::table('sessoes')
+            ->join('salas', 'sessoes.sala_id', '=', 'salas.id')
+            ->join('cinemas', 'salas.cinema_id', '=', 'cinemas.id')
+            ->select('cinemas.nome', DB::raw('count(sessoes.id) as total_sessoes'))
+            ->groupBy('cinemas.nome')
+            ->havingRaw('count(sessoes.id) > 1')
+            ->get();
+
+
+        return view('consultas.groupBy', ['cinemas' => $cinemas, 'search' => $search]);
+
+    }
+
+    public function in()
+    {
+        // Consulta usando operador IN
+
+        $faixa_etaria = ['livre', '10', '12'];
+
+        $filmes = DB::table('filmes')
+            ->whereIn('faixa_etaria', $faixa_etaria)
+            ->get();
+
+        return view('consultas.in', ['filmes' => $filmes]);
+
+    }
+
+    public function exists()
+    {
+        // Consulta usando operador EXISTS
+
+        $sessoesComFilmesAdultos = DB::table('sessoes')
+            ->whereExists(function ($query) {
+                $query->select(DB::raw(1))
+                    ->from('filmes')
+                    ->whereRaw('sessoes.filme_id = filmes.id')
+                    ->where('filmes.faixa_etaria', '>=', 18);
+            })
+            ->get();
+
+
+        return view('consultas.exists', ['sessoes' => $sessoesComFilmesAdultos]);
+
+    }
+
+    public function all()
+    {
+        // Consulta usando operador ALL
+
+        $cinemas = DB::table('cinemas')
+            ->where(function ($query) {
+                $query->whereNotExists(function ($subquery) {
+                    $subquery->select(DB::raw(1))
+                        ->from('salas')
+                        ->whereRaw('salas.cinema_id = cinemas.id')
+                        ->where('salas.capacidade', '<=', 100);
+                });
+            })
+            ->get();
+
+
+        return view('consultas.all', ['cinemas' => $cinemas]);
+
+    }
+
+
 }

@@ -69,5 +69,12 @@ class FilmeSeeder extends Seeder
             'data_lancamento' => '2019-04-25',
             'faixa_etaria' => '12'
         ]);
+        DB::table('filmes')->insert([
+            'capa' => 'https://upload.wikimedia.org/wikipedia/pt/thumb/3/3d/CamP%C3%B4ster.jpg/200px-CamP%C3%B4ster.jpg',
+            'titulo' => 'Cam',
+            'sinopse' => 'Uma cam girl tem sua conta roubada por uma sósia e precisa identificá-la para reaver sua identidade.',
+            'data_lancamento' => '2018-07-18',
+            'faixa_etaria' => '18'
+        ]);
     }
 }
