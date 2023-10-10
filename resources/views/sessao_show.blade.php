@@ -5,9 +5,9 @@
         <a class="p-2 font-semibold bg-green-600 rounded-lg text-zinc-50" href="{{ route('sessoes.index') }}">Voltar para Sessões</a>
     </div>
     <div class="flex items-center justify-center w-full h-screen ">
-
         <div>
-            <article class="flex flex-col items-center justify-center w-[600px] p-5 rounded-lg bg-gray-950">
+            <article class="flex items-center gap-5 p-5 rounded-lg bg-gray-950">
+                <img src="{{$sessao->filme->capa}}" class="h-[300px] w-[220px]" alt="">
                 <div class="flex items-start gap-4">
                     <div>
                         <h2 class="mb-2 text-xl font-bold text-yellow-500"> Sessão {{$sessao->id}} </h2>
@@ -23,7 +23,6 @@
                         </form>
                     </div>
                 </div>
-
             </article>
         </div>
     @endsection
